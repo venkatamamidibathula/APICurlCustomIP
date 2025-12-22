@@ -16,26 +16,30 @@ Timeout and error handling built-in for safe execution.
 
 🏗️ Setup Instructions
 1. Clone the Repository
-bash
+```bash
 git clone https://github.com/<your-username>/api-curl-tester.git
 cd api-curl-tester
+```
 2. Build the Docker Image
+
 The app expects a Docker image named curl-hosts that can accept parameters for IP, DNS, and curl command.
 
 You can create a simple Dockerfile like below:
 
-text
+```Docker
 FROM curlimages/curl:latest
 ENTRYPOINT ["sh", "-c"]
-Then build it:
-
-bash
+```
+```
 docker build -t curl-hosts .
+```
 3. Install Python Dependencies
-bash
+```bash
 pip install streamlit
+```
 (Optionally, you may include requirements.txt with streamlit as a dependency.)
 
 4. Run the App
-bash
+```bash
 streamlit run app.py
+```
