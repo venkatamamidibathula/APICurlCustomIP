@@ -24,12 +24,6 @@ cd api-curl-tester
 
 The app expects a Docker image named curl-hosts that can accept parameters for IP, DNS, and curl command.
 
-You can create a simple Dockerfile like below:
-
-```Docker
-FROM curlimages/curl:latest
-ENTRYPOINT ["sh", "-c"]
-```
 ```
 docker build -t curl-hosts .
 ```
