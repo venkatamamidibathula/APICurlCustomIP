@@ -17,7 +17,7 @@ Timeout and error handling built-in for safe execution.
 🏗️ Setup Instructions
 1. Clone the Repository
 ```bash
-git clone https://github.com/<your-username>/api-curl-tester.git
+git clone https://github.com/venkatamamidibathula/APICurlCustomIP.git
 cd api-curl-tester
 ```
 2. Build the Docker Image
