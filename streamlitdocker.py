@@ -9,7 +9,14 @@ ip = st.text_input("IP Address (leave empty for DNS lookup)", value="")
 dns = st.text_input("DNS Name", value="")
 curl_cmd = st.text_area("Curl Command", value="", height=100)
 
-if st.button("🚀 Run Curl via Docker", type="primary"):
+def normalize_curl(cmd: str) -> str:
+    lines = cmd.splitlines()
+    cleaned = " ".join(line.strip().rstrip("\\") for line in lines if line.strip())
+    return cleaned
+
+curl_cmd = normalize_curl(curl_cmd)
+
+if st.button("🚀 Submit", type="primary"):
     if dns and curl_cmd:
         # Resolve IP if not provided
         resolved_ip = ip.strip()
