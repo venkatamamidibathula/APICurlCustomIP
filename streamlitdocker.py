@@ -30,7 +30,7 @@ if st.button("🚀 Submit", type="primary"):
 
         full_cmd = f"docker run --rm curl-hosts {shlex.quote(resolved_ip)} {shlex.quote(dns)} {shlex.quote(curl_cmd)}"
 
-        st.code(f"`{full_cmd}`", language="bash")
+        #st.code(f"`{full_cmd}`", language="bash")
 
         with st.spinner("Spinning up container..."):
             try:
