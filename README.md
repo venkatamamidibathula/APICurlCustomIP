@@ -1,42 +1,20 @@
-# APICurlCustomIP
-A lightweight Streamlit web app that allows you to test API endpoints using a curl command — securely executed inside a Docker container. It supports DNS resolution, optional IP overrides, and provides clean output feedback directly in the browser UI.
+## 🎯 Problem
+**Production outages in complex microservices** behind 4-node load balancers make it **impossible to pinpoint failing API endpoints**. 
 
+**Current Pain Points:**
+- Multiple rounds of hosts file updates required
+- Admin privileges needed for `/etc/hosts` changes  
+- DNS resolution masks the failing node
+- Intermittent failures hard to reproduce consistently
 
-Prerequisities : Linux OS, Docker, Python 3.9 and above, pip
+## 💡 Solution  
+**APICurlCustomIP** bypasses load balancers by letting you **directly target specific nodes** via IP address through a secure web UI.
 
-Automatically resolve DNS to IP addresses if the IP is not provided.
+**Key Benefits:**
+- ✅ **No hosts file changes** - just enter IP in browser
+- ✅ **No admin privileges** required
+- ✅ **Instant DNS-to-IP resolution** 
+- ✅ **Docker sandbox** for safe curl execution
+- ✅ **Clear stdout/stderr** separation for debugging
 
-🚀 Features
-Run curl commands in a sandboxed Docker environment.
-
-Automatically resolve DNS to IP addresses if the IP is not provided.
-
-Clean and intuitive Streamlit-based UI.
-
-Clear separation of stdout and stderr responses.
-
-Timeout and error handling built-in for safe execution.
-
-
-🏗️ Setup Instructions
-1. Clone the Repository
-```bash
-git clone https://github.com/venkatamamidibathula/APICurlCustomIP.git
-```
-2. Build the Docker Image
-
-The app expects a Docker image named curl-hosts that can accept parameters for IP, DNS, and curl command.
-
-```
-docker build -t curl-hosts .
-```
-3. Install Python Dependencies
-```bash
-pip install streamlit
-```
-(Optionally, you may include requirements.txt with streamlit as a dependency.)
-
-4. Run the App
-```bash
-streamlit run app.py
-```
+**Result:** Identify the **exact failing node** in seconds, not hours.
